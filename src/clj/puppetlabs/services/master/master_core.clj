@@ -12,6 +12,8 @@
   [request-handler]
   (compojure/routes
     (compojure/GET "/environments" request
+                   (request-handler request))
+    (compojure/GET "/environment/*" request
                    (request-handler request))))
 
 (defn legacy-routes
